@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Journey</title>
+    <link rel="stylesheet" href="memory-lane.css">
+</head>
+<body>
+    <audio id="mySong" loop autoplay>
+        <source src="music/o.mp3" type="audio/mp3">
+    </audio>    
+
+    <script>
+        // Set volume to 20% of the audio
+        document.getElementById('mySong').volume = 0.2;
+    </script>
+    <div class="memory-container">
+        <h1>Our Beautiful Memories</h1>
+        <div id="memory-text" class="memory-text">
+            <!-- Month 1 message -->
+            <div class="memory-month" id="month1">Happy 1st monthsary love. I just wanna say thank you for being here for me when I was at my worst and at my best, thank you for making me realize that I am loved by anyone in this world. I'm so glad that I met you in my life, I love you so much darling. I love the way you talk, your cute face, your laugh, everything about you.
+                I think about you nonstop, and I always get butterflies whenever we talk. I want to spend my time with you and create new memories each day, I can never get enough of you and your love for me. I love you Julie, really. And I know that you overthink alot, and that's okay. I'm here for you to assure you that I'll always love you whatever comes our way. Being with me isn't easy, because there's alot of misunderstandings between us, but as long as we talk it out together, I'm sure it'll be fine. Although, my love for you increases each day and I'm so blessed to have you in my life. I know sometimes you make me feel sad, but that's apart of a relationship. So don't worry my love, we all make mistakes and I'll always be ready to understand and forgive you because I love you.
+                I appreciate your effort to remain calm whenever we have misunderstandings and I'm glad that now I'm yours 
+                </div>
+            
+            <!-- Month 2 message -->
+            <div class="memory-month" id="month2">Good morning, babyy! I hope you had a restful sleep. Happy 2nd monthsary to us! On this special day, I just want to keep my message simple but meaningful. 
+                Thank you for everything you’ve done and continue to do for us. Even though we’re miles apart, you always find a way to make me feel close to you, and that means the world to me. I truly love every moment we share, and I promise to be here for you—through your highs and your lows, at your best and your worst.
+                You are so special to me, and I’m so grateful to have you in my life. I love you endlessly, baby. Always remember that!</div>
+            
+            <!-- Month 3 message -->
+            <div class="memory-month" id="month3">Happy 3rd Monthsary, my love! I know I haven’t written much this month, but I wanted to take this moment to make it special for you, now and always. I love you, my dearest. Remember that, always</div>
+            
+            <!-- Month 4 message -->
+            <div class="memory-month" id="month4"> Happy 4th monthsary, my dear. These past four months have been nothing short of amazing. We've been through thick and thin, learning and growing together, and every challenge we've faced has only made our bond stronger. I’m so grateful for the love, patience, and understanding you’ve shown me.
+                You’ve brought so much joy and warmth into my life, and I truly appreciate the healthy, beautiful relationship we've built. Thank you for being my partner, my confidant, and my biggest supporter. I look forward to creating more memories and sharing countless more months (and years🥺 ) with you.
+                I love you more than words can express, baby. Here’s to many more months and years of happiness, love, and endless smiles. You’re my everything, Thọ!</div>
+        </div>
+        <button id="next-button" class="next-btn" onclick="showNextMonth()">Next Month</button>
+    </div>
+
+    <script src="memory-lane.js"></script>
+</body>
+</html>
+

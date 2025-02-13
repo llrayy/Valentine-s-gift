@@ -1,0 +1,60 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #fff, #ffe6eb);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    cursor: url('http://www.rw-designer.com/cursor-view/184812.png'), auto;
+}
+
+.memory-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff90c4;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.memory-text {
+    overflow: hidden; /* Hide overflow for smooth sliding effect */
+    position: relative;
+}
+
+.memory-month {
+    display: none; /* Hide all paragraphs initially */
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-100%); /* Start from left off-screen */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.memory-month.show {
+    display: block;
+    transform: translateX(0); /* Slide into place */
+    opacity: 1;
+}
+
+.next-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #f05c94;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+    background-color: #ff3075;
+}

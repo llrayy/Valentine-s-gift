@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Journey</title>
+    <link rel="stylesheet" href="love-journey.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="mySong" loop autoplay>
+        <source src="music/mysong.mp3" type="audio/mp3">
+    </audio>    
+
+    <script>
+        // Set volume to 20% of the audio
+        document.getElementById('mySong').volume = 0.2;
+    </script>
+
+    <div class="container">
+        <div id="message" class="message">That was a little game before the real one here, hehe. Happy Valentine's Day, My Dearest.💗</div>
+        <button id="nextBtn" class="next-btn">Next</button>
+    </div>
+
+    <script>
+        const messages = [
+            "💘Every day with you feels like Valentine’s Day, but today, I get to remind you even more how much I love you.",
+            "💞You are my favorite person, my safe place, and the best decision my heart ever made",
+            "💓Loving you is my favorite part of life. No matter where we go or what we do, I’m happiest when I’m with you.",
+            "Now, let's step into our Starry Night. ✨"
+        ];
+        
+        let index = 0;
+        const messageElement = document.getElementById("message");
+        const nextBtn = document.getElementById("nextBtn");
+
+        // Initial page animation
+        document.body.classList.add("page-show");
+
+        nextBtn.addEventListener("click", () => {
+            index++;
+            if (index < messages.length) {
+                messageElement.classList.remove("fade-in");
+                messageElement.classList.add("fade-out");  // Add fade-out before change
+
+                setTimeout(() => {
+                    messageElement.innerHTML = messages[index];
+                    messageElement.classList.remove("fade-out");
+                    messageElement.classList.add("fade-in");  // Add fade-in for new message
+                }, 500);  // Adjust timeout to allow fade-out animation to complete
+            } else {
+                // Apply zoom-in effect to the entire page
+                document.body.classList.add("zoom-in");
+                setTimeout(() => {
+                    window.location.href = "starry-night.html";  // Redirect to next page after animation
+                }, 1000);  // Wait for zoom-in animation to complete before redirection
+            }
+        });
+    </script>
+</body>
+</html>
+

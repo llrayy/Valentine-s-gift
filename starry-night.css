@@ -1,0 +1,125 @@
+/* starry-night.css */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #0b132b;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    animation: zoom-in 1.5s ease-out forwards; /* Zoom-in effect when the page loads */
+}
+
+/* Zoom-in Effect for the Entire Page */
+@keyframes zoom-in {
+    0% { opacity: 0; transform: scale(0.7); }  /* Start from smaller scale */
+    100% { opacity: 1; transform: scale(1); }  /* End at normal scale */
+}
+
+/* Zoom-Out Effect when transitioning to the Love Letter page */
+@keyframes zoom-out {
+    0% { opacity: 1; transform: scale(1); }   /* Start at normal scale */
+    100% { opacity: 0; transform: scale(0.7); }  /* End at smaller scale */
+}
+
+/* Ensure stars don't block content */
+.star-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevent stars from blocking clicks */
+}
+
+/* Individual stars */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+/* Randomized twinkle effect */
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Shooting star */
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(white, transparent);
+    top: 10%;
+    left: 90%;
+    transform: rotate(-45deg);
+    animation: shooting 3s linear infinite;
+}
+
+@keyframes shooting {
+    0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+    100% { transform: translateX(-300px) translateY(300px) rotate(-45deg); opacity: 0; }
+}
+
+/* Centered Message with Smooth Glow */
+.message {
+    text-align: center;
+    color: white;
+    font-size: 1.8em;
+    font-family: 'Cursive', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    animation: fadeGlow 5s infinite ease-in-out;
+    position: relative;
+    z-index: 2; /* Ensure it's above stars */
+}
+
+/* Fade in & fade out with soft glow */
+@keyframes fadeGlow {
+    0% { opacity: 0.3; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { opacity: 1; text-shadow: 0 0 15px rgba(255, 255, 255, 1); }
+    100% { opacity: 0.3; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+/* Centered Love Letter Button (Now Clickable) */
+.btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 182, 193, 0.7);
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+    animation: softGlow 4s infinite alternate ease-in-out;
+    position: relative;
+    z-index: 2; /* Make sure it's above stars */
+    cursor: url('http://www.rw-designer.com/cursor-view/184812.png'), auto;
+}
+
+@keyframes softGlow {
+    0% { box-shadow: 0 0 5px rgba(255, 182, 193, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(255, 182, 193, 1); }
+}
+
+.btn:hover {
+    background: rgba(255, 182, 193, 1);
+    box-shadow: 0 0 20px rgba(255, 182, 193, 1);
+    transform: scale(1.1);
+}
+
+/* Apply zoom-out when transitioning to the Love Letter page */
+.zoom-out {
+    animation: zoom-out 1.5s ease-out forwards; /* Zoom-out animation */
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night</title>
+    <link rel="stylesheet" href="starry-night.css">
+</head>
+<body>
+    <audio id="mySong" loop autoplay>
+        <source src="music/mysong.mp3" type="audio/mp3">
+    </audio>    
+
+    <script>
+        // Set volume to 20% of the audio
+        document.getElementById('mySong').volume = 0.2;
+    </script>
+
+    <div class="shooting-star"></div>
+
+    <!-- Centered Fading Message -->
+    <div class="message">
+        <h1>Under this vast and endless sky, where stars twinkle with the light of a thousand dreams, my love for you burns brighter than any constellation. In this moment, in your arms, I realize that the universe itself pales in comparison to the depth of my feelings for you. You are my constant, my home, my heart’s infinite horizon."</h1>
+    </div>
+
+    <!-- Centered Love Letter Button -->
+    <a href="memory-lane.html" id="loveLetterBtn" class="btn">Open to see our memory</a>
+
+    <!-- JavaScript for Random Stars -->
+    <script>
+        function createStars(count) {
+            const starContainer = document.createElement('div');
+            starContainer.classList.add('star-container');
+            document.body.appendChild(starContainer);
+
+            for (let i = 0; i < count; i++) {
+                let star = document.createElement('div');
+                star.classList.add('star');
+
+                let randomX = Math.random() * window.innerWidth;
+                let randomY = Math.random() * window.innerHeight;
+                let duration = Math.random() * 3 + 2; 
+
+                star.style.left = `${randomX}px`;
+                star.style.top = `${randomY}px`;
+                star.style.animationDuration = `${duration}s`;
+
+                starContainer.appendChild(star);
+            }
+        }
+
+        createStars(50);
+    </script>
+
+    <!-- Zoom-Out Transition JavaScript -->
+    <script>
+        // JavaScript to trigger the zoom-out animation and redirect to the Love Letter page
+        const loveLetterBtn = document.getElementById('loveLetterBtn');  // Get the Love Letter button
+
+        loveLetterBtn.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent immediate redirect
+            // Apply zoom-out effect to the body
+            document.body.classList.add('zoom-out');
+            
+            // Wait for the zoom-out animation to finish before redirecting
+            setTimeout(function () {
+                window.location.href = loveLetterBtn.href; // Redirect to the Love Letter page
+            }, 1500); // Matches the duration of the zoom-out animation (1.5 seconds)
+        });
+    </script>
+</body>
+</html>

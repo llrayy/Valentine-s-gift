@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Ask-Answer Game</title>
+    <link rel="stylesheet" href="game.css">
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: absolute;
+             top: 30px; /* Adjust the position as needed */
+            left: 50%;
+             transform: translateX(-50%);
+        }
+        .game-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fun Facts You Know About Me</h1>
+    <div class="game-container">
+        <div class="avatar">
+            <img src="/Picture/ray.jpg" alt="Your Face">
+        </div>
+
+        <div class="question-container">
+            <p id="question">Hey babe, ready to play?</p>
+            <button class="answer-btn" onclick="checkAnswer('A')">A) Option 1</button>
+            <button class="answer-btn" onclick="checkAnswer('B')">B) Option 2</button>
+            <button class="answer-btn" onclick="checkAnswer('C')">C) Option 3</button>
+        </div>
+
+        <div class="result-message"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

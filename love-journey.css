@@ -1,0 +1,88 @@
+/* Love Journey Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #333;  /* Dark background */
+    font-family: 'Cursive', sans-serif;
+    text-align: center;
+    opacity: 0;  /* Make body invisible initially for the animation */
+    animation: page-show 1s ease-out forwards;  /* Page show-up animation */
+    cursor: url('http://www.rw-designer.com/cursor-view/184812.png'), auto;
+}
+
+/* Page Show-Up Animation */
+@keyframes page-show {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Message Styling */
+.message {
+    font-size: 1.8em;
+    color: #f8b5d7;
+    opacity: 0;
+    animation: fade-in 1.5s ease-out forwards;  /* Slower fade-in for message */
+    max-width: 80%;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.9);  /* White background with some transparency */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);  /* Soft glow effect */
+}
+
+/* Fade-in Animation */
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-out Animation */
+@keyframes fade-out {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Zoom-in Animation for Entire Page */
+@keyframes zoom-in {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* Zoom-in Effect */
+.zoom-in {
+    animation: zoom-in 1s ease forwards;
+}
+
+/* Next Button */
+.next-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    background: #ff85a2;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 133, 162, 0.5);
+}
+
+/* Hover effect with glow */
+.next-btn:hover {
+    background: #ff6385;
+    box-shadow: 0 0 15px rgba(255, 99, 133, 0.8), 0 0 30px rgba(255, 99, 133, 0.6);
+    transform: scale(1.1);
+    animation: glow 0.6s alternate infinite;
+}
+
+/* Glow effect */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(255, 133, 162, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(255, 99, 133, 1); }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Valentine's Surprise</title>
+    <link rel="stylesheet" href="styles-index.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://animesher.com/orig/1/192/1929/19290/animesher.com_cute-gif-pink-1929080.gif" alt="Cute Heart GIF" class="login-gif">
+        <h2>Enter the secret password, my love!</h2>
+        <p class="hint">Hint: Our anniversary date ❤️</p>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Unlock</button>
+        <p id="error-message" class="error"></p>
+    </div>
+    
+    <script>
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+            if (password === "0310") {
+                window.location.href = "game.html";
+            } else {
+                document.getElementById("error-message").innerText = "Wrong password! Try again.";
+            }
+        } 
+    </script>   
+</body>
+</html>
